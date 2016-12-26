@@ -132,15 +132,15 @@ button {
 }
 
 #gameOver p {
-  font-size: 30px
+  font-size: 26px
 }
 
 #gameOver h2 {
-  font-size: 54px;
+  font-size: 45px;
 }
 
 #gameOver h3 {
-  font-size: 32px;
+  font-size: 30px;
 }
 
 #gameOver ul {
@@ -149,7 +149,7 @@ button {
 }
 
 #gameOver ul li {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 #gameOver #leaderBoard {
