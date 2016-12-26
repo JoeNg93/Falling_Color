@@ -52,6 +52,7 @@ new Vue({
       this.buttonOpacity = '0';
       this.gameOver = false;
       this.userScores = 0;
+      this.topPositionIncrement = 20;
       this.objectColor = this.getRandomColor();
       this.gameIsRunning = true;
       this.gameControl = setInterval(() => {
@@ -75,13 +76,13 @@ new Vue({
     },
     checkDifficulty() {
       if (this.userScores >= 10) {
-        const fallingSpeed = Math.floor(this.userScores / 10) * 10 + 15;
+        let fallingSpeed = Math.floor(this.userScores / 10) * 10 + 15;
         this.topPositionIncrement = fallingSpeed;
       }
     },
     submitPlayerInfo(event) {
       event.preventDefault();
-      this.$http.post('/push_score', { name: this.playerName, score: this.userScores })
+      this.$http.post('/push_score', {name: this.playerName, score: this.userScores})
           .then((response) => {
             this.messageFromServer = response.body;
             this.showSubmitForm = false;
