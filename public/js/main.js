@@ -25,16 +25,16 @@ new Vue({
     showSubmitForm: false,
     showLeaderBoard: false,
     topPlayers: [],
+    showResponse: false,
   },
   methods: {
     rotateColorBlock() {
       this.rotateDeg += 90;
+      this.currentColorIndex += 1;
       this.rotateValue = `rotate(${this.rotateDeg}deg)`;
     },
     getCurrentColor() {
-      const currentColor = this.colors[this.currentColorIndex];
-      this.currentColorIndex += 1;
-      return currentColor;
+      return this.colors[this.currentColorIndex];
     },
     getRandomColor() {
       const randomColorIndex = Math.floor(Math.random() * 4);
@@ -45,6 +45,7 @@ new Vue({
       this.showSubmitForm = false;
       this.playerName = '';
       this.showLeaderBoard = false;
+      this.showResponse = false;
 
       this.appBackgroundColor = '';
       this.buttonVisibility = 'hidden';
@@ -58,7 +59,7 @@ new Vue({
       }, 100);
     },
     calculateUserScore() {
-      if (this.objectColor === this.colors[this.currentColorIndex]) {
+      if (this.objectColor === this.getCurrentColor()) {
         this.userScores += 1;
         this.checkDifficulty();
       } else {
@@ -68,8 +69,8 @@ new Vue({
         this.$http.get('/get_leaderboard').then((response) => {
           this.topPlayers = response.body;
           this.showLeaderBoard = true;
-          clearInterval(this.gameControl);
         });
+        clearInterval(this.gameControl);
       }
     },
     checkDifficulty() {
@@ -84,6 +85,7 @@ new Vue({
           .then((response) => {
             this.messageFromServer = response.body;
             this.showSubmitForm = false;
+            this.showResponse = true;
             this.$http.get('/get_leaderboard').then((response) => {
               this.topPlayers = response.body;
             });

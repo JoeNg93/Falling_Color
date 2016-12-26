@@ -50,7 +50,7 @@
                     </div>
                 </form>
             </template>
-            <p v-if="isSubmitted">{{ messageFromServer }}</p>
+            <p v-if="showResponse">{{ messageFromServer }}</p>
             <button v-if="!isSubmitted" id="submitScoreButton" @click="showSubmit">Submit Score</button>
             <button @click="startGame" id="playAgainButton" v-if="!showSubmitForm">Play Again?</button>
         </div>
