@@ -18,6 +18,12 @@ new Vue({
     topPositionIncrement: 20,
     paddingDivHeight: '',
     colorBlockPosition: 0.75 * $(document).height(),
+
+    isSubmitted: false,
+    playerName: '',
+    messageFromServer: '',
+    showSubmitForm: false,
+    showLeaderBoard: false,
   },
   methods: {
     rotateColorBlock() {
@@ -35,6 +41,11 @@ new Vue({
       return this.colors[randomColorIndex];
     },
     startGame() {
+      this.isSubmitted = false;
+      this.showSubmitForm = false;
+      this.playerName = '';
+      this.showLeaderBoard = false;
+
       this.appBackgroundColor = '';
       this.buttonVisibility = 'hidden';
       this.buttonOpacity = '0';
@@ -56,16 +67,31 @@ new Vue({
         this.appBackgroundColor = '#355C7D';
         this.gameOver = true;
         this.gameIsRunning = false;
+        this.showLeaderBoard = true;
         clearInterval(this.gameControl);
       }
     },
     checkDifficulty() {
-
       if (this.userScores >= 10) {
         const fallingSpeed = Math.floor(this.userScores / 10) * 10 + 15;
         this.topPositionIncrement = fallingSpeed;
         console.log(fallingSpeed);
       }
+    },
+    submitPlayerInfo(event) {
+      event.preventDefault();
+      this.$http.post('/push_score', { name: this.playerName, score: this.userScores })
+          .then((response) => {
+            this.messageFromServer = response.body;
+            this.showSubmitForm = false;
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
+    },
+    showSubmit() {
+      this.showSubmitForm = true;
+      this.isSubmitted = true;
     }
   },
   watch: {

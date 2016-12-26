@@ -52,6 +52,24 @@ button {
   background-color: #E84A5F;
 }
 
+#submitPlayerButton {
+  background-color: #99B898;
+  transition: background-color 300ms linear;
+}
+
+#submitPlayerButton:hover {
+  background-color: #E84A5F;
+}
+
+#submitScoreButton {
+  background-color: #FF847C;
+  transition: background-color 300ms linear;
+}
+
+#submitScoreButton:hover {
+  background-color: #E84A5F;
+}
+
 #startButton {
   position: relative;
   top: 50%;
@@ -116,6 +134,25 @@ button {
 
 #gameOver h2 {
   font-size: 60px;
+}
+
+#gameOver h3 {
+  font-size: 50px;
+}
+
+#gameOver ul {
+  list-style-type: none;
+}
+
+#gameOver ul li {
+  font-size: 30px;
+}
+
+#gameOver #leaderBoard {
+  text-align: center;
+  width: 30%;
+  margin: auto;
+  border: 1px solid white;
 }
 
 
