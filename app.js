@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-  renderGameAndLeaderBoard(res);
+  res.render('index');
 });
 
 app.post('/push_score', (req, res) => {
@@ -29,6 +29,10 @@ app.post('/push_score', (req, res) => {
     score: req.body.score
   };
   addPlayerToDb(player, res);
+});
+
+app.get('/get_leaderboard', (req, res) => {
+  getLeaderboard(res);
 });
 
 app.listen(app.get('port'), () => {
@@ -48,18 +52,21 @@ function addPlayerToDb(player, res) {
       });
 }
 
-function renderGameAndLeaderBoard(res) {
+function getLeaderboard(res) {
+  let mydb = null;
   MongoClient.connect(app.get('url'))
       .then((db) => {
+        mydb = db;
         const players = db.collection('players');
         return players.aggregate([
-          { $project: {name: 1, score: 1, _id: 0} },
-          { $sort: {score: -1} },
-          { $limit: 5 }
+          {$project: {name: 1, score: 1, _id: 0}},
+          {$sort: {score: -1}},
+          {$limit: 5}
         ]).toArray();
       })
       .then((topPlayers) => {
-        res.render('index', {topPlayers,});
+        mydb.close();
+        res.json(topPlayers);
       })
       .catch((err) => {
         console.log(err.message);
