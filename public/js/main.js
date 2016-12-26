@@ -75,6 +75,7 @@ new Vue({
       }
     },
     checkDifficulty() {
+      console.log(this.topPositionIncrement);
       if (this.userScores >= 10) {
         let fallingSpeed = Math.floor(this.userScores / 10) * 10 + 15;
         this.topPositionIncrement = fallingSpeed;
