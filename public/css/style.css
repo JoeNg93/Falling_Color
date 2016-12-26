@@ -142,6 +142,7 @@ button {
 
 #gameOver ul {
   list-style-type: none;
+  padding: 0;
 }
 
 #gameOver ul li {
