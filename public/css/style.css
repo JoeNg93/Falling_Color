@@ -5,6 +5,7 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
 #app {
   transition: background-color 300ms linear;
   height: inherit;
@@ -15,6 +16,7 @@ body {
   height: 25%;
   position: relative;
 }
+
 /* colorObject will hit the Block when top = 600px */
 #colorObject {
   width: 20px;
@@ -41,6 +43,7 @@ button {
   box-shadow: none;
   border: none;
   border-radius: 0;
+  margin-bottom: 10px;
 }
 
 #playAgainButton {
@@ -133,11 +136,11 @@ button {
 }
 
 #gameOver h2 {
-  font-size: 60px;
+  font-size: 55px;
 }
 
 #gameOver h3 {
-  font-size: 34px;
+  font-size: 32px;
 }
 
 #gameOver ul {
@@ -146,7 +149,7 @@ button {
 }
 
 #gameOver ul li {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 #gameOver #leaderBoard {
