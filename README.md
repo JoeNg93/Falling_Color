@@ -15,8 +15,13 @@ It works great on any devices.
 - MongoDB for Database
 
 ### Installing
+Clone the project
 ```
 git clone https://github.com/JoeNg93/Falling_Color.git
+```
+
+Install package depedencies
+```
 npm install (To install depedencies)
 ```
 
@@ -25,5 +30,5 @@ npm install (To install depedencies)
 
 - Click mouse on PC or tap to the screen on mobile to rotate the diamond.
 
-### Demo
+## Demo
 ![Demo](./screenshots/Demo.gif)
