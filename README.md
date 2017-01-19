@@ -25,10 +25,5 @@ npm install (To install depedencies)
 
 - Click mouse on PC or tap to the screen on mobile to rotate the diamond.
 
-### Screenshots
-![Playing](./screenshots/Playing.png)
-<p align="center">Playing</p>
-
-
-![End Game + Leader Board](./screenshots/End_Game.png)
-<p align="center">End Game + Leader Board</p>
+### Demo
+![Demo](./screenshots/Demo.gif)
