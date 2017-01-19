@@ -9,6 +9,11 @@ It works great on any devices.
 
 ## Getting Started
 
+### Technologies
+- Vue.js for Front-End
+- Express for Back-End
+- MongoDB for Database
+
 ### Installing
 ```
 git clone https://github.com/JoeNg93/Falling_Color.git
