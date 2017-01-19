@@ -22,5 +22,8 @@ npm install (To install depedencies)
 
 ### Screenshots
 ![Playing](./screenshots/Playing.png)
+<p align="center">Playing</p>
+
 
 ![End Game + Leader Board](./screenshots/End_Game.png)
+<p align="center">End Game + Leader Board</p>
