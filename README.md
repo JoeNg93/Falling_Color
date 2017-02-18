@@ -30,5 +30,7 @@ npm install (To install depedencies)
 
 - Click mouse on PC or tap to the screen on mobile to rotate the diamond.
 
+- The difficulty increases for every 10 points the player gets
+
 ## Demo
 ![Demo](./screenshots/Demo.gif)
