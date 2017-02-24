@@ -4,8 +4,6 @@ This is my personal project. During my first year study, I attempted to make a g
 
 Currently it's running on [my Heroku server](http://falling-color.herokuapp.com).
 
-Note that the game is much smoother than the demo gif since the gif is recorded at 30 FPS
-
 It works great on any devices.
 
 
