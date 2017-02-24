@@ -4,6 +4,8 @@ This is my personal project. During my first year study, I attempted to make a g
 
 Currently it's running on [my Heroku server](http://falling-color.herokuapp.com).
 
+Note: The game is much smoother than the demo because it's recorded in 30FPS
+
 It works great on any devices.
 
 
