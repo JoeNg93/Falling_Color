@@ -27,6 +27,10 @@ Install package depedencies
 npm install (To install depedencies)
 ```
 
+Start your local MongoDB
+
+The app will start at localhost port 3000
+
 ### Rules
 - A color ball falls from the sky and the diamond at the bottom must match the color of the ball.
 
