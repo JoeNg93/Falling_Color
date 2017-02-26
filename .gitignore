@@ -1,3 +1,4 @@
 node_modules
 .idea
 db_data
+pm2-run.json
