@@ -2,7 +2,7 @@
 
 This is my personal project. During my first year study, I attempted to make a game to enhance my knowledge about Vue.js, which was the front-end framework I've just learned. Later, I added server-side feature which is able to store player's score using MongoDB.
 
-Currently it's running on [my Heroku server](http://falling-color.herokuapp.com).
+Currently it's running on [my server](http://falling-color.joehub.fi).
 
 **Note**: The game is much smoother than the demo because it's recorded in 30FPS
 
